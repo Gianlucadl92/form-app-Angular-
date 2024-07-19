@@ -1,0 +1,16 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="name" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="!myForm.valid">Invia</button>
+    <button mat-raised-button color="accent" (click)="onUpdate()" [disabled]="!myForm.valid">Modifica</button>
+    <button mat-raised-button color="warn" (click)="onDelete()" [disabled]="!myForm.valid">Cancella</button>
+  </form>
+  
